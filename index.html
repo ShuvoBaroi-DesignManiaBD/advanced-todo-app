@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced todo app</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script> -->
+    <!-- <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-medium">
+    <main class="h-[100vh] flex items-center justify-center">
+        <section class="app-area bg-gray-100 lg:min-w-[600px] max-h-[80vh] [800px] m-auto relative m-auto rounded-[15px] p-8">
+            <div class="app-header flex items-center gap-4 mb-4"">
+                <h2 class=" app-title text-3xl font-bold line-">Advanced todo app</h2>
+                <img src="./images/icon.png" alt="todo-icon" class="src" width="40px">
+            </div>
+            <form id="new-task-form" class="w-full rounded-full mb-5">
+                <div class="rounded-full flex">
+                    <div class="relative w-full">
+                        <input type="text"
+                            class="rounded-full block p-4 w-full z-20 text-sm text-gray-700 border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400"
+                            placeholder="Add new task" id="add-new" required>
+                        <button type="submit" id="add-task"
+                            class="rounded-full absolute top-0 right-0 px-8 p-2.5 h-full text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Add task
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul id="task-list" class="flex flex-col max-h-[40vh] overflow-auto">
+            
+            </ul>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+
+#task-list li{
+    position: relative;
+    padding: 16px 0;
+    border-bottom: 2px solid #eee;
+}
+
+#task-list li p{
+    padding-left: 40px;
+}
+ul li:before {
+    content: '';
+    position: absolute;
+    background-image: url('./images/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #3329506c;
+}
+ul li.checked:before {
+    content: '';
+    position: absolute;
+    background-image: url('./images/checked.png');
+    background-size: cover;
+    background-position: center;
+    text-decoration: line-through;
+    width: 24px;
+    height: 24px;
+}
+
+ul li span{
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    /* line-height: 30px; */
+}
+ul li span:hover {
+    background-color: #aaabac;
+    transition: 500ms;
+    cursor: pointer;
+}
