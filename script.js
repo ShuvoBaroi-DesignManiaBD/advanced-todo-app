@@ -26,15 +26,18 @@ newTaskForm.addEventListener("submit", function (event) {
     `;
     newTaskInput.value = '';
     taskListContainer.appendChild(taskItem);
+    saveTheData ()
 });
 
 // Complete task
 
 taskListContainer.addEventListener("click", function (event) {
-    if (event.target.classList.contains('checked')) {
+    if (event.target.classList.contains('checked') || (event.target.classList.contains('checked') && event.target.tagName !== 'SPAN')) {
         event.target.classList.remove('checked');
+        saveTheData ()
     } else {
         event.target.classList.add('checked');
+        saveTheData ()
     }
 })
 
@@ -43,10 +46,27 @@ taskListContainer.addEventListener("click", function (event) {
 taskListContainer.addEventListener("click", function (event) {
     if (event.target.tagName === 'SPAN') {
         event.target.parentElement.remove();
-    } else {
-        event.target.stopPropagation();
+        saveTheData ()
+    } else if (event.target.tagName === 'P') {
+        if (event.target.parentElement.classList.contains('checked')){
+            event.target.parentElement.classList.remove('checked');
+            saveTheData ()
+        } else if(!event.target.parentElement.classList.contains('checked')){
+            event.target.parentElement.classList.add('checked');
+            saveTheData ()
+        }
     }
 }, false);
-    
 
 
+// Save data to local storage
+
+function saveTheData () {
+    localStorage.setItem ("Data", taskListContainer.innerHTML);
+}
+
+function showData () {
+    taskListContainer.innerHTML = localStorage.getItem("Data");
+}
+
+showData();
