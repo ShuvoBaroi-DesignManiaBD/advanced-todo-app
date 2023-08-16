@@ -15,7 +15,8 @@
 
 <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-medium">
     <main class="h-[100vh] flex items-center justify-center">
-        <section class="app-area bg-gray-100 lg:min-w-[600px] max-h-[80vh] [800px] m-auto relative m-auto rounded-[15px] p-8">
+        <section
+            class="app-area bg-gray-100 lg:min-w-[600px] max-h-[80vh] [800px] m-auto relative m-auto rounded-[15px] p-8">
             <div class="app-header flex items-center gap-4 mb-4"">
                 <h2 class=" app-title text-3xl font-bold line-">Advanced todo app</h2>
                 <img src="./images/icon.png" alt="todo-icon" class="src" width="40px">
@@ -34,7 +35,18 @@
                 </div>
             </form>
             <ul id="task-list" class="flex flex-col max-h-[40vh] overflow-auto">
-            
+                <li class="task flex justify-between text-gray-800 relative cursor-pointer">
+                    <p class="max-w-[80%]">${getInputedText}</p>
+                    <button
+                        class="edit succes rounded-[4px] text-[14px] text-green-600 underline underline-offset-4 mr-12 -mb-2">Edit</button>
+                    <span>x</span>
+                </li>
+                <li class="task flex justify-between text-gray-800 relative cursor-pointer">
+                    <textarea name="task-edit-box" id="task-edit" rows="3" class="border-gray-200 rounded-md w-[75%] p-3 text-[14px] ml-10">${getInputedText}</textarea>
+                    <button
+                        class="edit succes rounded-[4px] text-[14px] text-green-600 underline underline-offset-4 mr-12 -mb-2">Edit</button>
+                    <span>x</span>
+                </li>
             </ul>
         </section>
     </main>
